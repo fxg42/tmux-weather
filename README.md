@@ -2,6 +2,8 @@
 
 Status line extensions for tmux-resurrect and tmux-continuum
 
+![screenshot](https://github.com/fxg42/tmux-weather/blob/master/screenshot.png)
+
 ## Features
 
 - `#{weather}` placeholder for the status line. Displays an icon representing
