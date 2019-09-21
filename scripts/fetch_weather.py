@@ -11,13 +11,14 @@ def getLatLon(key):
 def getWeather(lat, lon, key):
     resp = requests.get('http://api.openweathermap.org/data/2.5/weather', params={ 'lat': lat, 'lon': lon, 'appid': key})
     payload = resp.json()
-    return payload['weather'][0]['icon']
+    return payload['weather'][0]['icon'], int(payload['main']['temp'] - 273.15)
 
 try:
     with open('apikeys.json') as f:
         keys = json.load(f)
         lat, lon = getLatLon(keys['ipdata'])
-        weatherIconCode = getWeather(lat, lon, keys['openweathermap'])
+        weatherIconCode, temperature = getWeather(lat, lon, keys['openweathermap'])
         print(weatherIconCode)
+        print(temperature)
 except:
     print('')

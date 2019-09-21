@@ -11,48 +11,49 @@ if [ ! -f "$FILE" ]; then
 fi
 
 icon_code=$(head -n 1 "$FILE")
+temp=$(head -n 2 "$FILE" | tail -1)
 
 case $icon_code in
   01d )
-    echo " "
+    echo "  ${temp}°"
     ;;
   01n )
-    echo " "
+    echo "  ${temp}°"
     ;;
   02d )
-    echo " "
+    echo "   ${temp}°"
     ;;
   02n )
-    echo " "
+    echo "  ${temp}°"
     ;;
   03d | 03n | 04d | 04n )
-    echo " "
+    echo "  ${temp}°"
     ;;
   09d | 10d )
-    echo " "
+    echo "   ${temp}°"
     ;;
   09n | 10n )
-    echo " "
+    echo "  ${temp}°"
     ;;
   11d )
-    echo " "
+    echo "   ${temp}°"
     ;;
   11n )
-    echo " "
+    echo "  ${temp}°"
     ;;
   13d )
-    echo " "
+    echo "   ${temp}°"
     ;;
   13n )
-    echo " "
+    echo "  ${temp}°"
     ;;
   50d )
-    echo " "
+    echo "   ${temp}°"
     ;;
   50n )
-    echo " "
+    echo "   ${temp}°"
     ;;
   * )
-    echo "  "
+    echo ""
     ;;
 esac
