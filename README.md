@@ -1,6 +1,6 @@
 # tmux-weather
 
-Status line extensions for tmux-resurrect and tmux-continuum
+Adds current weather and temperature to tmux.
 
 ![screenshot](https://github.com/fxg42/tmux-weather/blob/master/screenshot.png)
 
