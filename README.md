@@ -12,7 +12,6 @@ Adds current weather and temperature to tmux.
 ## Dependencies
 
 - python3
-- crontab
 - [A terminal font based on Nerd Fonts](https://www.nerdfonts.com/)
 - [An OpenWeatherMap API key](https://openweathermap.org)
 - [An ipdata.co API key](https://api.ipdata.co)
@@ -23,16 +22,18 @@ Clone the repo:
 
     $ git clone https://github.com/fxg42/tmux-weather ~/clone/path
 
-Create file `~/clone/path/scripts/apikeys.json` by renaming the given sample file
+Create file `~/clone/path/scripts/apikeys.json` by copying the [given sample file](https://github.com/fxg42/tmux-weather/blob/master/samples/apikeys.json)
 and copy-pasting in your API keys.
 
-Create a crontab that fetches the weather every few minutes:
+Modify the given [plist sample file](https://github.com/fxg42/tmux-weather/blob/master/samples/com.github.fxg42.tmux-weather.plist)
+by copy-pasting in the absolute path to the python3 executable
+and copy it to `~/Library/LaunchAgents/com.github.fxg42.tmux-weather.plist`.
 
-    $ crontab -e
+Load the plist:
 
-    */5 * * * *  cd ~/clone/path/scripts && /path/to/python3 fetch_weather.py > weather.out 2>&1
+    $ launchctl load ~/Library/LaunchAgents/com.github.fxg42.tmux-weather.plist
 
-Add this line to .tmux.conf:
+Finally, add this line to `.tmux.conf` and source it.
 
     run-shell ~/clone/path/weather.tmux
 

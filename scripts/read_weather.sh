@@ -4,9 +4,10 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 FILE="$CURRENT_DIR/weather.out"
 if [ ! -f "$FILE" ]; then
-  ./fetch_weather.py > "$FILE"
+  ./get_weather.py > "$FILE"
   if [ ! -f "$FILE" ]; then
-    echo " "
+    echo ""
+    exit
   fi
 fi
 
@@ -18,7 +19,7 @@ case $icon_code in
     echo "  ${temp}°"
     ;;
   01n )
-    echo "  ${temp}°"
+    echo " ${temp}°"
     ;;
   02d )
     echo "   ${temp}°"

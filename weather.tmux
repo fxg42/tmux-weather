@@ -8,7 +8,7 @@ interpolation=(
   "\#{weather}"
 )
 commands=(
-  "#($CURRENT_DIR/scripts/weather_icon.sh)"
+  "#($CURRENT_DIR/scripts/read_weather.sh)"
 )
 
 set_tmux_option() {
